@@ -35,6 +35,7 @@ conn.commit()
 # --------------------------
 # Helper Functions
 # --------------------------
+
 def add_contact(data):
     try:
         cur.execute("INSERT OR REPLACE INTO contact VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", data)
@@ -67,9 +68,10 @@ def update_contact(data, phone):
 # --------------------------
 # Streamlit App
 # --------------------------
-st.title("📒 My Contacts App (Streamlit Edition)")
 
-menu = ["Home", "Add Contact", "Find Contact", "View All"]
+st.title("📒 My Contacts App ")
+
+menu = ["Home", "View All", "Add Contact", "Find Contact"]
 choice = st.sidebar.selectbox("Menu", menu)
 
 if choice == "Home":
